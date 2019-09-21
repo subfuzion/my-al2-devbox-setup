@@ -1,0 +1,41 @@
+
+nitro system
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances
+
+create a snapshot
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html
+
+increase volume
+https://aws.amazon.com/premiumsupport/knowledge-center/expand-root-ebs-linux/
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html?icmpid=docs_ec2_console
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html
+
+
+Extending a Linux File System After Resizing a Volume
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html
+
+lsblk
+NAME          MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT       │sudo yum install xfsprogs
+nvme1n1       259:0    0 279.4G  0 disk                  │sudo xfs_growfs -d /
+nvme2n1       259:1    0 279.4G  0 disk                  │
+nvme0n1       259:2    0     1T  0 disk                  │df -h
+├─nvme0n1p1   259:3    0  1024G  0 part /                │Filesystem      Size  Used Avail Use% Mounted on
+└─nvme0n1p128 259:4    0     1M  0 part
+
+sudo growpart /dev/nvme0n1 1
+lsblk
+
+
+df -h
+sudo yum install xfsprogs
+sudo xfs_growfs -d /
+
+df -h
+Filesystem      Size  Used Avail Use% Mounted on         │
+devtmpfs         31G     0   31G   0% /dev               │
+tmpfs            31G     0   31G   0% /dev/shm           │df -h
+tmpfs            31G  6.8M   31G   1% /run               │sudo yum install xfsprogs
+tmpfs            31G     0   31G   0% /sys/fs/cgroup     │sudo xfs_growfs -d /
+/dev/nvme0n1p1  1.0T  9.5G 1015G   1% /                  │df -h
+tmpfs           6.2G     0  6.2G   0% /run/user/1000
+

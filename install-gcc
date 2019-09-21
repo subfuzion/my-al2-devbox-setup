@@ -1,0 +1,19 @@
+
+tcl
+http://www.linuxfromscratch.org/blfs/view/cvs/general/tcl.html
+
+expect
+http://www.linuxfromscratch.org/blfs/view/cvs/general/expect.html
+
+DejaGnu
+needs makeinfo:
+yum install texi2html texinfo 
+http://www.linuxfromscratch.org/blfs/view/cvs/general/dejagnu.html
+
+sudo yum install gmp-devel
+sudo yum install -y mpfr
+https://centos.pkgs.org/6/epel-x86_64/libmpc-devel-0.8-3.el6.x86_64.rpm.html
+sudo yum install -y libmpc-devel
+
+export LIBRARY_PATH=/usr/lib64
+
